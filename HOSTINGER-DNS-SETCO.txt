@@ -1,0 +1,53 @@
+SETCO.CC — HOSTINGER DNS CONNECTION
+
+Open Hostinger hPanel:
+Domains > setco.cc > DNS / Nameservers > DNS records
+
+Remove only existing A/AAAA records for @ and any A/CNAME record for www that points to an old website.
+Do not delete email MX, SPF, DKIM, or DMARC records.
+
+Add these records:
+
+1) Type: A
+   Name: @
+   Points to: 162.159.143.30
+   TTL: Default
+
+2) Type: A
+   Name: @
+   Points to: 172.66.3.26
+   TTL: Default
+
+3) Type: TXT
+   Name: _openai-site-verification
+   Value: openai-site-verification=vpZ0_knc7AaHnhNcvDDqPj7YXMvPhKXxEGW0n_vuX4k
+   TTL: Default
+
+4) Type: TXT
+   Name: _cf-custom-hostname
+   Value: 085264ed-cd5d-40ef-9ee4-8906c06963c1
+   TTL: Default
+
+5) Type: CNAME
+   Name: www
+   Target: custom-domains.chatgpt.site
+   TTL: Default
+
+6) Type: TXT
+   Name: _openai-site-verification.www
+   Value: openai-site-verification=6UaUw6X6xTPooAvnfAbdHa7DRaRAtOirdgpRYLNMu_Q
+   TTL: Default
+
+7) Type: TXT
+   Name: _cf-custom-hostname.www
+   Value: 7a6b82a4-1a47-4f08-b709-6ac5176f3a80
+   TTL: Default
+
+After saving, allow DNS time to propagate. Reply "done" in Codex and the domain/SSL status can be rechecked.
+
+Temporary live URL:
+https://setco-global.shahearabrehman.chatgpt.site
+
+Final URLs after verification:
+https://setco.cc
+https://www.setco.cc
